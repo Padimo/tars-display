@@ -43,3 +43,23 @@ Added features to readme.
 
 Made rough CAD drawings (2D) of the top face in Fusion, with dimensions. It occurs to me that if I want this thing to walk or at least have motors in the joints that actually do something, then I'll need some translational motion at least on the outer legs. That kind of assembly will be added because I want it to be able to walk  
 
+## 10/7/2025 - CAD  
+
+I normally start with the PCB but for this project I think it makes more sense for me to fit the PCB to the case (TARS not CASE) which means that I have to actually make the PCB. 
+
+###### CAD
+The drawing I started with was the entire top face but I actually need to separate it... so I have to split sketch or something. 
+
+I started with the central piece, but then realized that the OLED I planned to use (0.95" SSD1331) is too big for what I'd drawn before. There's a really nice model of the robots here: https://www.thingiverse.com/thing:5156908 
+So I used these dimensions to start (22x176x22mm). 
+For the TARS lettering I found the font they used in the movie (Trade Gothic LT Std) and installed that. 
+
+Here's the top face (center only)
+![Screenshot 2025-10-06 at 4.59.28 PM.png](https://blueprint.hackclub.com/user-attachments/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6ODA4LCJwdXIiOiJibG9iX2lkIn19--440710c28651d3c4e4215a265c7fb9ab1a5ff35e/Screenshot%202025-10-06%20at%204.59.28%E2%80%AFPM.png)
+
+Took me an hour to discover circular pattern + combine intersect for the side piece. Thank goodness I can rectangular pattern it to make the second one. 
+
+![Screenshot 2025-10-06 at 9.25.55 PM.png](https://blueprint.hackclub.com/user-attachments/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6ODI4LCJwdXIiOiJibG9iX2lkIn19--82573de240acf6dcbd8df448e351f3b23bcf3ff4/Screenshot%202025-10-06%20at%209.25.55%E2%80%AFPM.png)
+
+Finished CAD for now. Will add arm servos for the side pieces later, and will fill in the rest of the central portion once a PCB and other electronics have been added.   
+
