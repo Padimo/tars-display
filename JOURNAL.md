@@ -63,3 +63,31 @@ Took me an hour to discover circular pattern + combine intersect for the side pi
 
 Finished CAD for now. Will add arm servos for the side pieces later, and will fill in the rest of the central portion once a PCB and other electronics have been added.   
 
+## 10/9/2025 - More Brainstorming  
+
+Needed to document research/ideation.
+
+##### Components and Features
+#### Features
+- Concretely: 
+	- Show whatever text is in the Firebase on the display
+	- Move legs (walking)
+	- LED highlights (that's my specialty)
+	- Memory to make a "log" (more on that later)
+	- Show images from SD
+	- Enable/disable name of whoever sent the text to the display (typically me, but could also be siblings and other friends etc.)
+	- some personality, showing time and weather i suppose
+- Maybe (if time permits):
+	- Speech/conversations
+#### Components
+- ESP32 (preferably WROOM and not making everything myself, even though WROOM is probably more expensive for JLC SMT)
+- 0.95" SSD1331 OLED
+- 4x servo
+- Neopixel LEDs
+- SD card + reader
+- Microphone/speakers? 
+- Power management + power input port (I wanted battery but I don't think it'll work out)
+
+OLED I'm using:
+![Screenshot 2025-10-08 at 9.46.56 PM.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTE0NywicHVyIjoiYmxvYl9pZCJ9fQ==--8d8102daa3b50f1f9da10e7fc584ff3cfeb1678a/Screenshot%202025-10-08%20at%209.46.56%E2%80%AFPM.png)  
+
