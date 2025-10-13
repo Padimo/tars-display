@@ -10,7 +10,7 @@ This is my journal of the design and building process of **TARS Quote **.
 You can view this journal in more detail on **Hack Club Blueprint** [here](https://blueprint.hackclub.com/projects/164).
 
 
-## 10/6/2025 - Brainstorm + Drawing  
+## 10/5/2025 - Brainstorm + Drawing  
 
 ##### TARS Quote
 A heartfelt communication device based on the robot TARS from Interstellar![Screenshot 2025-10-05 at 10.30.19 PM.png](https://blueprint.hackclub.com/user-attachments/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6Njc2LCJwdXIiOiJibG9iX2lkIn19--ef02b4fb3f413bc63f60397b2cae0c28c4918e08/Screenshot%202025-10-05%20at%2010.30.19%E2%80%AFPM.png)
@@ -43,7 +43,7 @@ Added features to readme.
 
 Made rough CAD drawings (2D) of the top face in Fusion, with dimensions. It occurs to me that if I want this thing to walk or at least have motors in the joints that actually do something, then I'll need some translational motion at least on the outer legs. That kind of assembly will be added because I want it to be able to walk  
 
-## 10/7/2025 - CAD  
+## 10/6/2025 - CAD  
 
 I normally start with the PCB but for this project I think it makes more sense for me to fit the PCB to the case (TARS not CASE) which means that I have to actually make the PCB. 
 
@@ -63,11 +63,12 @@ Took me an hour to discover circular pattern + combine intersect for the side pi
 
 Finished CAD for now. Will add arm servos for the side pieces later, and will fill in the rest of the central portion once a PCB and other electronics have been added.   
 
-## 10/9/2025 - More Brainstorming  
+## 10/8/2025 - More Brainstorming  
 
 Needed to document research/ideation.
 
 ##### Components and Features
+
 #### Features
 - Concretely: 
 	- Show whatever text is in the Firebase on the display
@@ -79,6 +80,7 @@ Needed to document research/ideation.
 	- some personality, showing time and weather i suppose
 - Maybe (if time permits):
 	- Speech/conversations
+
 #### Components
 - ESP32 (preferably WROOM and not making everything myself, even though WROOM is probably more expensive for JLC SMT)
 - 0.95" SSD1331 OLED
