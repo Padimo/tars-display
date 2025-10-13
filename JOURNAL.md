@@ -93,3 +93,34 @@ Needed to document research/ideation.
 OLED I'm using:
 ![Screenshot 2025-10-08 at 9.46.56 PM.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTE0NywicHVyIjoiYmxvYl9pZCJ9fQ==--8d8102daa3b50f1f9da10e7fc584ff3cfeb1678a/Screenshot%202025-10-08%20at%209.46.56%E2%80%AFPM.png)  
 
+## 10/13/2025 - Schematic design + CAD  
+
+##### Schematic design: 
+**Components**
+- ESP32 WROOM
+- 0.95" SSD1331 OLED
+- 4x servo
+- Neopixel LEDs
+- SD card + reader
+- Power management + power input port (I wanted battery but I don't think it'll work out)
+
+![Screenshot 2025-10-13 at 3.12.45 PM.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjA3OSwicHVyIjoiYmxvYl9pZCJ9fQ==--98bac9f7a2cb32bf0ab70e7fd755877818b384ef/Screenshot%202025-10-13%20at%203.12.45%E2%80%AFPM.png)
+
+To Do:
+- Import SSD1331 into KiCad
+- Servo calculations (are 9g ones strong enough)
+- Neopixel patterns
+- SD card reader location and storage needed
+- Power management system
+	- Power input (5-12V adapter from wall outlet, at least 2m length)
+	- 5V regulator
+	- 3.3V regulator
+	- Logic level shifters 3.3V -> 5V (for 9g servos)
+
+#### Servo calculations
+Two of the servos will be rotating the outer legs; the other two will lift/lower legs enabling it to move effectively.
+This means I have to design the lift mechanism so that I can do the calculations...
+
+# Servo Lift Mechanism
+Paused.  
+
