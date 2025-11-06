@@ -6,10 +6,6 @@
   ==================================================================
 -->
 
-This is my journal of the design and building process of **TARS Quote **.  
-You can view this journal in more detail on **Hack Club Blueprint** [here](https://blueprint.hackclub.com/projects/164).
-
-
 ## 10/5/2025 - Brainstorm + Drawing  
 
 ##### TARS Quote
@@ -123,4 +119,56 @@ This means I have to design the lift mechanism so that I can do the calculations
 
 # Servo Lift Mechanism
 Paused.  
+
+## 11/5/2025 - More CAD (A)  
+
+First I measured how much space I'll have for a PCB. I don't want it to take up too much space because I want to include WS2812B LEDs throughout the inside of the robot. (I have yet to figure out how to route them to the outer legs, where they'll be or what they'll even do.)
+
+I have $44-2(4)=36mm$ max width.
+I'll limit the length to half of the available space, so $(176-2(4))/2=84mm$ max length. 
+I have 44/2-2(4)=14mm vertical height. This isn't as important to the PCB which will be 1.6mm thick, and I doubt other components will exceed an additional 5mm of height. The bulk of this space will likely be wiring. 
+
+I also want to set each of the Braille dots in the main body to be illuminated. Since they're 2.5mm in diameter and WS2812B are 5mmx5mm I'll probably just use 0805 LEDs. 
+
+Why PCB? Because I'm using ESP32S3-WROOM-1. I don't want to deal with a dev board. 
+
+Hmm. Genius idea: add two I2C and two SPI expansion ports on the back just for fun. 
+
+Components to be on the PCB: 
+- ESP32S3-WROOM-1
+- all power management circuitry
+- Headers
+	- Servo headers (x2 not x4)
+	- Display headers 
+	- Speaker headers (yes I will include a speaker)
+- MEMS microphone? if I end up including it. I'll leave space for it for sure. 
+
+While thinking (dangerous, I know) I have decided that the PCB is the MIDDLE half of the main body! Makes it easy, I can just put all headers at the top, and the OLED won't be pressed up against the PCB. 
+
+More thinking: I need inputs. Silly me! The ESP32 has built in capacitive touch channels so all I need to do are break these out (probably on the bottom). 
+
+Even more thinking: no need for servo lift mechanism because I don't want it to walk around if its tethered by a power cable anyway. 
+
+Note: try to avoid QFN, BGA, etc. anything super difficult to solder with just a hot plate and no pick and place machine
+
+Here's the input layout I came up with: 
+![Screenshot 2025-11-03 at 3.44.49 PM](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODE1MSwicHVyIjoiYmxvYl9pZCJ9fQ==--22238bf123ee08ee2e95a552839d945b05bb71e2/Screenshot%202025-11-03%20at%203.44.49%E2%80%AFPM.png)
+
+The wide panel with arrows: the top middle will be up, bottom middle is down, left left, right right.
+The stuff under: various positions the TARS can be in. The first one is just upright, the second one is leaning forward, the third one is one arm forward one back (probably I'll set which arm to be RNG) and the last one is to toggle sleep mode. Obviously on the actual model I can make it 3D so it will make more sense. 
+
+For these inputs I should add indicator LEDs. These will all be the same color as the Braille LEDs, and I'm thinking blue. 
+
+Didn't I say the PCB won't extend that far, you may ask? Yes, I did. And I changed my mind again. Now, the PCB will be three-quarters of the available space, so $176*3/4-4=128mm$ length. 
+
+Time to get to PCB design! 
+
+#### PCB design
+First I add the ESP32 S3 and two servos. Then, an 8 pin header for the display. This is followed by the 16 LEDs. 8 capacitive touch inputs are also added (as a pin header). Three pins in a header are for WS2812B LEDs which will be added more specifically later on. These require 5V, so next I'll add some power management. 
+
+I wonder if USB-C might be the best option for this project. That way there's only one input anyway. I'll use the GCT_USB4085, since that's THT and therefore will have a strong physical connection. The orientation of the board forces the port to be at the bottom, but I want it at the back, so I'll design a slim breakaway board (first time!). This breakaway will have to be SUPER compact (14mm max, estimated 6mm from board, gives 8mm which is exactly the length of the breakaway; may need to rethink the PCB orientation) and have screw holes (means heat inserts in the 3D print point and a removable back panel (magnetic???)).
+
+Rethinking PCB orientation: I want the PCB to be flush with the front of the robot. But the LED indicators and capacitive touch panels need to be in the front, so the CAD will need cutouts for those. This gives me about 10mm for the USBC breakaway which is much more comfortable. 
+
+^ these notes will be important considerations while drawing and routing the PCB. remember this is me thinking during schematics.   
 
